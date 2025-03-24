@@ -18,4 +18,4 @@ function addResource(name, link) {
 
 // Example usage of the function to add resources dynamically
 // You can call this function whenever you want to add a resource
-addResource("T1.25 Science Notes", "/Users/joshuakemp/Documents/VSCODES/PersonalWebsite/Study Resources/Science Term 1 Revision Notes.pdf");
+addResource("T1.25 Science Notes", "https://github.com/kemply-code/joshuak.me/raw/main/Science%20Term%201%20Revision%20Notes.pdf");
