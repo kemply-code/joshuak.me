@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
+    <title>Contact Me - Joshua Kemp</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -12,26 +12,27 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
             text-align: center;
         }
         header {
             background: #333;
             color: #fff;
             padding: 20px;
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 600;
-            text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         nav {
             background: #444;
-            padding: 10px 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         nav ul {
             list-style: none;
-            padding: 0;
             margin: 0;
+            padding: 10px 0;
             display: flex;
             justify-content: center;
         }
@@ -47,19 +48,26 @@
         nav ul li a:hover {
             color: #f4b400;
         }
+        main {
+            flex: 1;
+            padding: 40px 20px;
+        }
         .contact-form {
-            width: 100%;
-            max-width: 500px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #fff;
+            background: #fff;
+            padding: 30px;
+            margin: 0 auto;
             border-radius: 10px;
+            max-width: 500px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form h2 {
+            color: #333;
+            margin-bottom: 20px;
         }
         .contact-form input,
         .contact-form textarea {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -67,40 +75,63 @@
         }
         .contact-form button {
             background-color: #333;
-            color: white;
-            padding: 10px 20px;
+            color: #fff;
             border: none;
-            border-radius: 5px;
+            padding: 12px 20px;
             font-size: 1rem;
+            border-radius: 5px;
             cursor: pointer;
+            margin-top: 10px;
         }
         .contact-form button:hover {
             background-color: #f4b400;
         }
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 15px 10px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        footer a {
+            color: #f4b400;
+            text-decoration: none;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
+
     <header>
         Contact Me
     </header>
+
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="resources.html">Study Resources</a></li>
-            <li><a href="projects.html">Project Information</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="links.html">Links</a></li>
         </ul>
     </nav>
 
-    <section class="contact-form">
-        <h2>Get in Touch</h2>
-        <form action="https://formspree.io/f/xvgkrrlz" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+    <main>
+        <section class="contact-form">
+            <h2>Get in Touch</h2>
+            <form action="https://formspree.io/f/xvgkrrlz" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 Joshua Kemp | 
+        <a href="https://github.com/kemply-code" target="_blank">GitHub</a> | 
+        <a href="snake.html">Secret</a>
+    </footer>
 
 </body>
 </html>

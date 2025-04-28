@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snake Game - Joshua Kemp</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f2f5; /* soft background */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 600;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    canvas {
+      background-color: #ffffff;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      border-radius: 15px;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+    footer a {
+      color: #f4b400;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Snake Game
+  </header>
+
+  <main>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+  </main>
+
+  <footer>
+    &copy; 2025 Joshua Kemp | <a href="index.html">Home</a>
+  </footer>
+
+  <script>
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+
+    const gridSize = 20;
+    let snake = [{x: 200, y: 200}];
+    let dx = gridSize;
+    let dy = 0;
+    let food = randomFood();
+    let gameOver = false;
+
+    function randomFood() {
+      return {
+        x: Math.floor(Math.random() * (canvas.width / gridSize)) * gridSize,
+        y: Math.floor(Math.random() * (canvas.height / gridSize)) * gridSize
+      };
+    }
+
+    function drawSnake() {
+      ctx.fillStyle = "#4CAF50"; // calm green snake
+      snake.forEach(segment => {
+        ctx.fillRect(segment.x, segment.y, gridSize - 2, gridSize - 2);
+      });
+    }
+
+    function drawFood() {
+      ctx.fillStyle = "#f4b400"; // soft golden yellow food
+      ctx.fillRect(food.x, food.y, gridSize - 2, gridSize - 2);
+    }
+
+    function moveSnake() {
+      const head = {x: snake[0].x + dx, y: snake[0].y + dy};
+      snake.unshift(head);
+
+      if (head.x === food.x && head.y === food.y) {
+        food = randomFood();
+      } else {
+        snake.pop();
+      }
+    }
+
+    function checkCollision() {
+      if (
+        snake[0].x < 0 || snake[0].x >= canvas.width ||
+        snake[0].y < 0 || snake[0].y >= canvas.height
+      ) {
+        gameOver = true;
+      }
+
+      for (let i = 4; i < snake.length; i++) {
+        if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) {
+          gameOver = true;
+        }
+      }
+    }
+
+    function clearCanvas() {
+      ctx.fillStyle = "#ffffff"; // clean white background
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function gameLoop() {
+      if (gameOver) {
+        ctx.fillStyle = "#333";
+        ctx.font = "24px Poppins, sans-serif";
+        ctx.textAlign = "center";
+        ctx.fillText("Game Over 😵", canvas.width / 2, canvas.height / 2);
+        return;
+      }
+
+      clearCanvas();
+      moveSnake();
+      drawSnake();
+      drawFood();
+      checkCollision();
+
+      setTimeout(gameLoop, 100);
+    }
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "ArrowUp" && dy === 0) {
+        dx = 0;
+        dy = -gridSize;
+      } else if (event.key === "ArrowDown" && dy === 0) {
+        dx = 0;
+        dy = gridSize;
+      } else if (event.key === "ArrowLeft" && dx === 0) {
+        dx = -gridSize;
+        dy = 0;
+      } else if (event.key === "ArrowRight" && dx === 0) {
+        dx = gridSize;
+        dy = 0;
+      }
+    });
+
+    gameLoop();
+  </script>
+
+</body>
+</html>
