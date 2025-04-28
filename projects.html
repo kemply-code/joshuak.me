@@ -1,144 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joshua Kemp - Personal Website</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 20px;
-            font-size: 2rem;
-            font-weight: 600;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        nav {
-            background: #444;
-            padding: 10px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-        nav ul li {
-            margin: 0 20px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #f4b400;
-        }
-        section {
-            padding: 40px 20px;
-            background-color: #fff;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 1000px;
-        }
-        h2 {
-            color: #333;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        .about-text {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            color: #666;
-        }
-        .project {
-            background: #f4f4f4;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 8px;
-            text-align: left;
-        }
-        .project h3 {
-            font-size: 1.6rem;
-            color: #333;
-        }
-        .project p {
-            font-size: 1rem;
-            color: #777;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 15px;
-            font-size: 0.9rem;
-        }
-        footer a {
-            color: #f4b400;
-            text-decoration: none;
-            font-weight: 600;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f2f5;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 25px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f4b400;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    main {
+      flex: 1;
+      padding: 30px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      padding: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .project-card p {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .project-card a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #f4b400;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .project-card a:hover {
+      background-color: #d39e00;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    footer a {
+      color: #f4b400;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        Projects
-    </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <a href="links.html">Links</a>
+  </nav>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="links.html">Links</a></li>
-        </ul>
-    </nav>
+  <header>My Projects</header>
 
-    <!-- Recent Projects Section -->
-    <section id="projects">
-        <h2>Recent Projects</h2>
+  <main>
+    <div class="project-card">
+      <h3>Snake Game</h3>
+      <p>A classic snake game with a modern twist!</p>
+      <a href="snake.html">Play Now</a>
+    </div>
 
-        <!-- Project 1 -->
-        <div class="project">
-            <h3>Custom Macropad with PCB</h3>
-            <p>I’m currently working on a custom 9 key macropad for my desk that uses an arduino microcontroller and a custom 3d printed case and fully custom PCB.</p>
-        </div>
+    <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>My personal portfolio showcasing all my creations.</p>
+      <a href="portfolio.html">View Project</a>
+    </div>
 
-        <!-- Project 2 -->
-        <div class="project">
-            <h3>This Website!</h3>
-            <p>This website has been a great way of teaching me how to code in a practical way. I really beleive that more people just learn the basics of HTML to be able to create websites like this.</p>
-        </div>
+    <div class="project-card">
+      <h3>Links Hub</h3>
+      <p>A clean and simple page for all my favorite links.</p>
+      <a href="links.html">Visit</a>
+    </div>
 
-        <!-- Project 3 -->
-        <div class="project">
-            <h3>First Robotics/Tech Challenge</h3>
-            <p>Me and my team 404: Team not found, work together everyday creating competetive robots to compete across the world. We comete in both FTC and FRC and all put our hearts and sould into this project.</p>
-        </div>
-    </section>
+    <!-- Add more projects here if you want! -->
+  </main>
 
-
-    <!-- Footer Section -->
-    <footer>
-        &copy; 2025 Joshua Kemp |
-        <a href="https://github.com/kemply-code" target="_blank">GitHub</a> |
-        <a href="snake.html">Secret</a>
-      </footer>
+  <footer>
+    &copy; 2025 Joshua Kemp | 
+    <a href="https://github.com/kemply-code" target="_blank">GitHub</a> | 
+    <a href="snake.html">Secret</a>
+  </footer>
 
 </body>
 </html>
