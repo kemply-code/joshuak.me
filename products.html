@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Products - Joshua Kemp</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQK39YR7YV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-KQK39YR7YV');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    nav {
+      background: #444;
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #f4b400;
+    }
+
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      width: 100%;
+      align-items: stretch;
+    }
+
+    .product-item {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .product-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-item img {
+      height: 200px;
+      width: 100%;
+      object-fit: contain;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .product-item h3 {
+      font-size: 1.4rem;
+      margin: 10px 0;
+      min-height: 48px;
+    }
+
+    .product-item p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 20px;
+      min-height: 60px;
+    }
+
+    .product-item a {
+      text-decoration: none;
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background-color 0.3s;
+      display: inline-block;
+    }
+
+    .product-item a:hover {
+      background-color: #f4b400;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #f4b400;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>My Products</header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="links.html">Links</a></li>
+      <li><a href="products.html">Products</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="product-list">
+
+      <div class="product-item">
+        <img src="ProductImages/mouse.jpg" alt="Mx Master 3s" />
+        <h3>Logitech MX Master 3s</h3>
+        <p>Ultra-quiet, ergonomic, smart scroll. The king of productivity mice.</p>
+        <a href="https://www.amazon.com.au/Logitech-MX-Master-3S-Performance/dp/B0B11LJ69K" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="product-item">
+        <img src="ProductImages/monitor.jpg" alt="Ultrawide Monitor" />
+        <h3>MSI PRO MP341CQ</h3>
+        <p>34” curved ultrawide. 100Hz refresh. Clear, immersive workspace.</p>
+        <a href="https://www.amazon.com.au/MSI-PRO-MP341CQW-UltraWide-Compatible/dp/B09XZTF1TS" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="product-item">
+        <img src="ProductImages/keyboard.jpg" alt="YUNZII AL66" />
+        <h3>YUNZII AL66 Keyboard</h3>
+        <p>Aluminum shell, RGB, tri-mode wireless, and smooth-as-butter keys.</p>
+        <a href="https://www.amazon.com.au/YUNZII-AL66-Mechanical-Bluetooth-Swappable/dp/B0CJ97WLML" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="product-item">
+        <img src="ProductImages/headphones.jpg" alt="Nothing Ear (a)" />
+        <h3>Nothing Ear (a)</h3>
+        <p>Bold design. Noise-cancelling. Great sound at a wallet-friendly price.</p>
+        <a href="https://www.amazon.com.au/Nothing-Earbuds-integration-Algorithm-Listening/dp/B0CXPRHTNB" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="product-item">
+        <img src="ProductImages/macbook.jpg" alt="Macbook M2 Air" />
+        <h3>M2 Macbook Air</h3>
+        <p>A great computer that powers all of my other products and helps me with all my projects.</p>
+        <a href="https://www.amazon.com.au/2022-Apple-MacBook-Laptop-chip/dp/B0B3C3SFPD/ref=sr_1_7" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="product-item">
+        <img src="ProductImages/monitorarm.jpg" alt="Monitor Arm" />
+        <h3>Vesa Monitor Arm</h3>
+        <p>This is an amazing monitor mount allowing for me to clear space off of my desk for my books and any other paper.</p>
+        <a href="https://www.amazon.com.au/VIVO-Monitor-Adjustable-Articulating-STAND-V001/dp/B00B21TLQU/ref=sr_1_5" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="product-item">
+        <img src="ProductImages/printer.jpg" alt="BambuLabs" />
+        <h3>Bambu Labs A1 Combo</h3>
+        <p>This is my favourite 3d printer i have ever owned and i have had little to no issues. Definetely would recommend.</p>
+        <a href="https://www.amazon.com.au/Multi-Color-Precision-Full-Auto-Calibration-Compensation/dp/B0D17V4SKM/ref=sr_1_1_sspa" target="_blank">Buy Now</a>
+      </div>
+
+      <div class="product-item">
+        <img src="ProductImages/screwdriver.jpg" alt="Screwdriver" />
+        <h3>IFixIt Screwdriver Set</h3>
+        <p>I have always wanted a high quality screwdriver set and this is my favourite. It has magnetic tips and a massive selection of heads.</p>
+        <a href="https://www.amazon.com.au/Precision-Mini-bits-Screwdriver-Electronics-Compatible/dp/B08NWKMT8V/ref=sr_1_6" target="_blank">Buy Now</a>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Joshua Kemp |
+    <a href="https://github.com/kemply-code" target="_blank">GitHub</a> |
+    <a href="snake.html">Secret</a>
+  </footer>
+
+</body>
+
+</html>

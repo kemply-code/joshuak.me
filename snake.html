@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <title>Snake Game</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQK39YR7YV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KQK39YR7YV');
+  </script>
+
   <style>
     * {
       margin: 0;
@@ -108,6 +117,7 @@
     <a href="projects.html">Projects</a>
     <a href="contact.html">Contact</a>
     <a href="links.html">Links</a>
+    <a href="products.html">Products</a>
   </nav>
 
   <header>Snake Game</header>
@@ -134,8 +144,8 @@
     let snake = [{x: 200, y: 200}];
     let direction = 'RIGHT';
     let food = {
-      x: Math.floor(Math.random() * (canvas.width/box)) * box,
-      y: Math.floor(Math.random() * (canvas.height/box)) * box
+      x: Math.floor(Math.random() * (canvas.width / box)) * box,
+      y: Math.floor(Math.random() * (canvas.height / box)) * box
     };
     let score = 0;
     let highscore = 0;
@@ -178,8 +188,8 @@
       if (snakeX === food.x && snakeY === food.y) {
         score++;
         food = {
-          x: Math.floor(Math.random() * (canvas.width/box)) * box,
-          y: Math.floor(Math.random() * (canvas.height/box)) * box
+          x: Math.floor(Math.random() * (canvas.width / box)) * box,
+          y: Math.floor(Math.random() * (canvas.height / box)) * box
         };
       } else {
         snake.pop();
@@ -196,7 +206,6 @@
       }
 
       snake.unshift(newHead);
-
       document.getElementById('score').textContent = score;
     }
 
